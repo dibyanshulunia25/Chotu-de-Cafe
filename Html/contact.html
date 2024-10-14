@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chotu de Cafe</title>
+    <link rel="icon" type="image/x-icon" href="Pictures/logo.jpg">
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+         #popup {
+            display: none; /* Initially hidden */
+            position: fixed; 
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+            z-index: 1000; /* Ensure it's above other elements */
+        }
+
+        #closePopup {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- header section starts -->
+    <header class="header">
+        <a href="index.html" class="logo">
+            <img src="Pictures/logo.jpg" alt="">
+        </a>
+
+        <nav class="navbar">
+            <a href="index.html">home</a>
+            <a href="about.html">about</a>
+            <a href="menu.html">menu</a>
+            <a href="product.html">product</a>
+            <a href="review.html">review</a>
+            <a href="contact.html">contact</a>
+            <a href="blogs.html">blogs</a>
+            <a href="login.html">Login</a>
+        </nav>
+
+        <div class="icons">
+            <div class="fas fa-search" id="search-btn"></div>
+            <div class="fas fa-shopping-cart" id="cart-btn"></div>
+            <div class="fas fa-bars" id="menu-btn"></div>
+        </div>
+
+        <div class="search-form">
+            <input type="search" id="search-box" placeholder="search here...">
+            <label for="search-box" class="fas fa-search"></label>
+        </div>
+
+        <div class="cart-items-container">
+            <div class="cart-item">
+                <span class="fas fa-times"></span>
+                <img src="Pictures/ice-tea.jpg" alt="cart1">
+                <div class="content">
+                    <h3>cart item 01</h3>
+                    <div class="price">Rs.150/-</div>
+                </div>
+            </div>
+            <div class="cart-item">
+                <span class="fas fa-times"></span>
+                <img src="Pictures/ice-tea.jpg" alt="cart1">
+                <div class="content">
+                    <h3>cart item 01</h3>
+                    <div class="price">Rs.150/-</div>
+                </div>
+            </div>
+            <div class="cart-item">
+                <span class="fas fa-times"></span>
+                <img src="Pictures/ice-tea.jpg" alt="cart1">
+                <div class="content">
+                    <h3>cart item 01</h3>
+                    <div class="price">Rs.150/-</div>
+                </div>
+            </div>
+            <div class="cart-item">
+                <span class="fas fa-times"></span>
+                <img src="Pictures/ice-tea.jpg" alt="cart1">
+                <div class="content">
+                    <h3>cart item 01</h3>
+                    <div class="price">Rs.150/-</div>
+                </div>
+            </div>
+            <a href="#" class="btn">Checkout now</a>
+        </div>
+    </header>
+    <!-- header section ends -->
+
+    <section class="contact" id="contact">
+
+        <h1 class="heading"><span>contact</span> us</h1>
+        <div class="row">
+            <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d118147.80351149272!2d70.82129635!3d22.273486950000013!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3959c98ac71cdf0f%3A0x76dd15cfbe93ad3b!2sRajkot%2C%20Gujarat!5e0!3m2!1sen!2sin!4v1724653994644!5m2!1sen!2sin"allowfullscreen="" loading="lazy"></iframe>
+       
+            <form action="" id="contactForm">
+                <h3>get in touch</h3>
+                <div class="inputBox">
+                    <span class="fas fa-user"></span>
+                    <input type="text" id="name" required placeholder="Name">
+                </div>
+                <span class="error" id="nameError" style="color: red; font-size: 2rem;"></span>
+                <div class="inputBox">
+                    <span class="fas fa-envelope"></span>
+                    <input type="email" id="email" required placeholder="Email">
+                </div>
+                <span class="error" id="emailError" style="color: red; font-size: 2rem;"></span>
+                <div class="inputBox">
+                    <span class="fas fa-phone"></span>
+                    <input type="tel" id="phone" required placeholder="number">
+                </div>
+                <span class="error" id="phoneError" style="color: red; font-size: 2rem;"></span>
+                <button type="submit" class="btn">Contact now</button>
+                <!-- Popup Container -->
+        <div id="popup">
+            <span id="closePopup" onclick="closePopup()">×</span>
+            <p>Thank you for reaching out! Our team will get back to you soon.</p>
+        </div>
+            </form>
+    </div>
+    </section>
+
+
+    <section class="footer">
+
+        <div class="share">
+            <a href="#" class="fab fa-facebook"></a>
+            <a href="#" class="fab fa-twitter"></a>
+            <a href="#" class="fab fa-instagram"></a>
+            <a href="#" class="fab fa-linkedin"></a>
+            <a href="#" class="fab fa-pinterest"></a>
+        </div>
+    
+        <div class="links">
+            <a href="home.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="menu.html">Menu</a>
+            <a href="product.html">Products</a>
+            <a href="review.html">Review</a>
+            <a href="contact.html">Contact us</a>
+            <a href="blogs.html">Blogs</a>
+            <a href="login.html">Login/Sign up</a>
+        </div>
+    
+        <div class="credit">
+            <p>created by <span>Dibyanshu Lunia</span> | all rights reserved &#169</p>
+        </div>
+    </section>
+
+
+    <!-- custom js file link  -->
+    <script src="js/script.js"></script>
+    <script>
+        const form = document.getElementById('contactForm');
+        const nameInput = document.getElementById('name');
+        const emailInput = document.getElementById('email');
+        const phoneInput = document.getElementById('phone');
+        const nameError = document.getElementById('nameError');
+        const emailError = document.getElementById('emailError');
+        const phoneError = document.getElementById('phoneError');
+        const popup = document.getElementById('popup');
+        const closePopup = document.getElementById('closePopup');
+
+        form.addEventListener('submit', (event) => {
+            event.preventDefault(); // Prevent default form submission
+
+            // Validation for name (ensure at least one letter)
+            const nameValue = nameInput.value.trim();
+            if (nameValue === "" || !/^[a-zA-Z]+$/.test(nameValue)) { 
+                nameError.textContent = "Please enter a valid name.";
+            } else {
+                nameError.textContent = ""; // Clear error message
+            }
+
+            // Validation for email
+            const emailValue = emailInput.value.trim();
+            if (emailValue === "" || !isValidEmail(emailValue)) {
+                emailError.textContent = "Please enter a valid email address.";
+            } else {
+                emailError.textContent = ""; // Clear error message
+            }
+
+            // Validation for phone number (you can customize the pattern)
+            const phoneValue = phoneInput.value.trim();
+            if (phoneValue === "" || !isValidPhone(phoneValue)) {
+                phoneError.textContent = "Please enter a valid phone number. (e.g., +1-555-123-4567)";
+            } else {
+                phoneError.textContent = ""; // Clear error message
+            }
+
+            // If all validations pass, submit the form (you can replace this with your actual submission logic)
+            if (nameError.textContent === "" && emailError.textContent === "" && phoneError.textContent === "") {
+                console.log("Form submitted successfully!");
+                // Submit form data to the server
+                // ...
+
+            }
+
+            if (nameError.textContent === "" && emailError.textContent === "" && phoneError.textContent === "") {
+                // If form is valid, show the popup
+                popup.style.display = 'block';
+            }
+
+        });
+
+         
+        // Regular expressions for validation
+        function isValidEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+
+        // Example phone number pattern (you can modify as needed)
+        function isValidPhone(phone) {
+            // This pattern allows different formats (e.g., +1-555-123-4567, 1234567890)
+            const phoneRegex = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+            return phoneRegex.test(phone);
+        }
+
+        // Function to close the popup
+        function closePopup() {
+            popup.style.display = 'none';
+        }
+    </script>
+</body>
+
+</html>
