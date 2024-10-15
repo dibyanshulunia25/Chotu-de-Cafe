@@ -11,25 +11,7 @@
     <!-- font awesome cdn link  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <style>
-         #popup {
-            display: none; /* Initially hidden */
-            position: fixed; 
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            background-color: white;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-            z-index: 1000; /* Ensure it's above other elements */
-        }
-
-        #closePopup {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            cursor: pointer;
-        }
+        
     </style>
 
 </head>
@@ -117,7 +99,7 @@
                 <span class="error" id="nameError" style="color: red; font-size: 2rem;"></span>
                 <div class="inputBox">
                     <span class="fas fa-envelope"></span>
-                    <input type="email" id="email" required placeholder="Email">
+                    <input type="text" id="email" required placeholder="Email">
                 </div>
                 <span class="error" id="emailError" style="color: red; font-size: 2rem;"></span>
                 <div class="inputBox">
@@ -127,10 +109,6 @@
                 <span class="error" id="phoneError" style="color: red; font-size: 2rem;"></span>
                 <button type="submit" class="btn">Contact now</button>
                 <!-- Popup Container -->
-        <div id="popup">
-            <span id="closePopup" onclick="closePopup()">×</span>
-            <p>Thank you for reaching out! Our team will get back to you soon.</p>
-        </div>
             </form>
     </div>
     </section>
@@ -158,13 +136,12 @@
         </div>
     
         <div class="credit">
-            <p>created by <span>Dibyanshu Lunia</span> | all rights reserved &#169</p>
+            <p>created by <span>Dibyanshu Lunia</span> | all rights reserved ©</p>
         </div>
     </section>
 
 
     <!-- custom js file link  -->
-    <script src="js/script.js"></script>
     <script>
         const form = document.getElementById('contactForm');
         const nameInput = document.getElementById('name');
@@ -181,8 +158,8 @@
 
             // Validation for name (ensure at least one letter)
             const nameValue = nameInput.value.trim();
-            if (nameValue === "" || !/^[a-zA-Z]+$/.test(nameValue)) { 
-                nameError.textContent = "Please enter a valid name.";
+            if (nameValue === "" || !/^[a-zA-Z]+$/.test(nameValue)) { // Updated regex 
+                nameError.textContent = "Please enter a valid name (letters only).";
             } else {
                 nameError.textContent = ""; // Clear error message
             }
@@ -211,11 +188,6 @@
 
             }
 
-            if (nameError.textContent === "" && emailError.textContent === "" && phoneError.textContent === "") {
-                // If form is valid, show the popup
-                popup.style.display = 'block';
-            }
-
         });
 
          
@@ -232,11 +204,8 @@
             return phoneRegex.test(phone);
         }
 
-        // Function to close the popup
-        function closePopup() {
-            popup.style.display = 'none';
-        }
     </script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>
