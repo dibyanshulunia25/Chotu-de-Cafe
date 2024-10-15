@@ -193,8 +193,8 @@
      <style>
         .error-message {
             color: red;
-            font-size: 14px;
-            margin-bottom: 5px;
+            font-size: 10px;
+            margin-bottom: 2px;
             display: block;
         }
     </style>
@@ -285,7 +285,7 @@
                 <p>or use your email for registration</p>
                 <input type="text" name="txt" id="signup-name" placeholder="Name" required="">
                 <span class="error-message" id="signup-name-error"></span>
-                <input type="email" name="email" id="signup-email" placeholder="Email" required="">
+                <input type="text" name="email" id="signup-email" placeholder="Email" required="">
                 <span class="error-message" id="signup-email-error"></span>
                 <input type="password" name="pswd" id="signup-password" placeholder="Password" required="">
                 <span class="error-message" id="signup-password-error"></span>
@@ -301,7 +301,7 @@
                     <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
                 </div>
                 <p>or use your account</p>
-                <input type="email" name="email" id="login-email" placeholder="Email" required="">
+                <input type="text" name="email" id="login-email" placeholder="Email" required="">
                 <span class="error-message" id="login-email-error"></span>
                 <input type="password" name="pswd" id="login-password" placeholder="Password" required="">
                 <span class="error-message" id="login-password-error"></span>
@@ -382,11 +382,8 @@
             // Name validation
             const nameInput = document.getElementById('signup-name');
             const nameError = document.getElementById('signup-name-error');
-            if (nameInput.value.trim() === '') {
-                nameError.textContent = 'Please enter your name.';
-                isValid = false;
-            } else if (nameInput.value.length < 3) {
-                nameError.textContent = 'Name must be at least 3 characters long.';
+            if (!validateName(nameInput.value)) {
+                nameError.textContent = 'Name should contain only letters and should be at least 3 characters long.';
                 isValid = false;
             } else {
                 nameError.textContent = '';
@@ -460,6 +457,12 @@
         function validatePassword(password) {
             const re = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*#.,?&])[A-Za-z\d@$!%*#.,?&]{8,}$/;
             return re.test(password);
+        }
+
+        // Name validation function
+        function validateName(name) {
+            const re = /^[A-Za-z]{3,}$/; // Allows only letters and numbers, minimum 3 characters
+            return re.test(name);
         }
      </script>
 </body>
